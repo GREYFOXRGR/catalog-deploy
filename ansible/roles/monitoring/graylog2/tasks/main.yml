@@ -1,0 +1,16 @@
+---
+- name: Install apt-transport-https
+  apt: name=apt-transport-https state=present
+  
+- name: Install Java8
+  apt: name=openjdk-8-jre-headless state=present
+  
+- name: Install UUID Runtime
+  apt: name=uuid-runtime state=present
+  
+- name: Install PWGen
+  apt: name=pwgen state=present
+  
+- name: Install MongoDB
+  apt: name=mongodb-server state=present
+  
