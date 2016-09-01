@@ -1,16 +1,13 @@
 ---
-- name: Install apt-transport-https
-  apt: name=apt-transport-https state=present
+- hosts: graylog2
+  tasks: 
+  - name: Install apt-transport-https
+    apt: name={{item}} state=present update_cache=yes
+    with items:
+    - apt-transport-https
+    - openjdk-8-jre-headless
+    - uuid-runtime
+    - pwgen
+    - mongodb-server
   
-- name: Install Java8
-  apt: name=openjdk-8-jre-headless state=present
-  
-- name: Install UUID Runtime
-  apt: name=uuid-runtime state=present
-  
-- name: Install PWGen
-  apt: name=pwgen state=present
-  
-- name: Install MongoDB
-  apt: name=mongodb-server state=present
   
